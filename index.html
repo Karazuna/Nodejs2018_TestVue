@@ -1,0 +1,26 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <div id="app">
+            This is a test. id=app
+            <!-- Vue.js domain -->
+            <br> {{ message }}
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- <script/> 이렇게 닫지 말것. 활성화 안됨 -->
+        <script>
+            const myApp = new Vue({
+                el: '#app',
+                //elements 원소, #id 함으로써 DOM과 연결? - tag id
+                data: {message: 'Cloud!'}
+            });
+            //myApp.$data.message = '1234';
+            //동적으로 message가 바뀜
+        </script>
+    </body>
+
+</html>
