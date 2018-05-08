@@ -1,26 +1,52 @@
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-    </head>
+<head>
+    <meta charset="UTF-8">
+</head>
 
-    <body>
-        <div id="app">
-            This is a test. id=app
-            <!-- Vue.js domain -->
-            <br> {{ message }}
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <!-- <script/> 이렇게 닫지 말것. 활성화 안됨 -->
-        <script>
-            const myApp = new Vue({
-                el: '#app',
-                //elements 원소, #id 함으로써 DOM과 연결? - tag id
-                data: {message: 'Cloud!'}
-            });
+<body>
+    <div id="app">
+        This is a test. id=app
+        <!-- Vue.js domain -->
+        <br> {{ message + '1234' }}
+        <br>
+        <span :title="date">마우스를 가까이 가져오세요. v-bind 생략가능</span>
+        <!-- <span v-bind:title="date">마우스를 가까이 가져오세요.</span> -->
+        <!-- <span title="날짜 - 툴팁">마우스를 가까이 가져오세요.</span> -->
+        <br>
+        <span v-if="seen">볼 수 있어용</span>
+        <span v-else>못 봐용</span>
+        <!-- myApp.$data.seen = true & false -->
+        <br>
+        <ul>
+            <!-- 정렬안한 리스트 -->
+            <li v-for="todo in todos">{{todo.text}}</li>
+            <!-- todos 에서 반복으로 뽑음 -->
+            <!-- myApp.$data.todos.push({text: 'TEXT'}) -->
+            <!-- myApp.$data.todos.pop({text: 'TEXT'}) -->
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script/> 이렇게 닫지 말것. 활성화 안됨 -->
+    <script>
+        const myApp = new Vue({
+            el: '#app',
+            //elements 원소, #id 함으로써 DOM과 연결? - tag id
+            data: {
+                message: 'Cloud!',
+                date: '오늘 날짜 : ' + new Date().toLocaleString(),
+                seen: true,
+                todos: [
+                    {text : 'JAVAScript'},
+                    {text : 'Node.js'},
+                    {text : 'Vue.js'},
+                    {text : 'Nuxt.js'}
+                ]
+            }
+        });
             //myApp.$data.message = '1234';
             //동적으로 message가 바뀜
-        </script>
-    </body>
+    </script>
+</body>
 
 </html>
