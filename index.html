@@ -2,6 +2,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 
 <body>
@@ -25,7 +28,32 @@
             <!-- myApp.$data.todos.push({text: 'TEXT'}) -->
             <!-- myApp.$data.todos.pop({text: 'TEXT'}) -->
         </ul>
+        <br>
+        <div>
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+            <div class="column">4</div>
+            <div class="column">5</div>
+        </div>
     </div>
+    <section>
+        <div class="section">
+            <h1 class="title is-primary">제목</h1>
+            <h2 class="subtitle">중요한 내용</h1>
+        </div>
+        <a class="button is-link">button</a>
+        <span class="tag is-primary">트위터<button class="delete"></button></span>
+        <article class="message">
+            <div class="message-header">
+                <p>Hello World</p>
+                <button class="delete is-primary"></button>
+            </div>
+            <div class="message-body">
+                <span class="content is-5">Test message body!!</span>
+            </div>
+        </article>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- <script/> 이렇게 닫지 말것. 활성화 안됨 -->
     <script>
